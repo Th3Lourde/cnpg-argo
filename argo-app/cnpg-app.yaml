@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cnpg-clusters
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: cpaas
+  source:
+    path: pg-clusters
+    plugin:
+      name: argocd-vault-plugin
+    repoURL: git@github.com:nutanix-beam/cpaas-clutch-manifests-gitops
+    targetRevision: dev1
+  syncPolicy:
+    automated:
+      allowEmpty: false
+      prune: false
+      selfHeal: true
