@@ -12,8 +12,8 @@ spec:
     path: pg-clusters
     plugin:
       name: argocd-vault-plugin
-    repoURL: git@github.com:nutanix-beam/cpaas-clutch-manifests-gitops
-    targetRevision: dev1
+    repoURL: https://github.com/Th3Lourde/cnpg-argo
+    targetRevision: main
   syncPolicy:
     automated:
       allowEmpty: false
