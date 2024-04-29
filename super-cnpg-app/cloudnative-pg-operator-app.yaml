@@ -9,14 +9,14 @@ spec:
   destination:
     name: in-cluster
     namespace: cpaas-cloudnativepg-operator
-  project: cpaas
+  project: default
   source:
     path: charts/cloudnative-pg
     repoURL: https://github.com/Th3Lourde/cnpg-argo
     targetRevision: main
     helm:
       valueFiles:
-        - values-demo.yaml
+        - values-local-argo.yaml
   syncPolicy:
     automated:
       prune: true
